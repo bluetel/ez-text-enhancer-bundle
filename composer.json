@@ -13,10 +13,10 @@
         "psr-4": {"spec\\Inviqa\\EzTextEnhancerBundle\\": "spec"}
     },
     "require": {
-        "php": "~5.5|~7.0",
-        "symfony/framework-bundle": "^2.8",
-        "symfony/twig-bundle": "^2.8",
-        "ezsystems/ezpublish-kernel": "^6.5"
+        "php": "^7.4",
+        "symfony/framework-bundle": "^5.0",
+        "symfony/twig-bundle": "^5.0",
+        "ezsystems/ezplatform-kernel": "~1.1.2"
     },
     "require-dev": {
         "phpspec/phpspec": "^3.1"

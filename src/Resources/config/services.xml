@@ -6,7 +6,8 @@
 
     <services>
         <service id="inviqa.text_enhancer.chain_text_enhancer"
-                 class="Inviqa\EzTextEnhancerBundle\TextEnhancer\ChainTextEnhancer">
+                 class="Inviqa\EzTextEnhancerBundle\TextEnhancer\ChainTextEnhancer"
+                 public="true">
         </service>
 
         <service id="inviqa.text_enhancer.twig_extension"

@@ -2,12 +2,13 @@
 
 namespace spec\Inviqa\EzTextEnhancerBundle\Twig;
 
-use eZ\Publish\Core\FieldType\RichText\Converter;
+use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
 use Inviqa\EzTextEnhancerBundle\TextEnhancer;
 use Inviqa\EzTextEnhancerBundle\Twig\TwigTextEnhancerExtension;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Twig\TwigFilter;
 
 class TwigTextEnhancerExtensionSpec extends ObjectBehavior
 {
@@ -49,7 +50,7 @@ class TwigTextEnhancerExtensionSpec extends ObjectBehavior
         $this->enhanceText($inputDocument)->shouldReturn('<p>my <strong>enhanced</strong> text</p>');
     }
 
-    public function getMatchers()
+    public function getMatchers(): array
     {
         return [
             'returnTheFilters' => function ($filters, $expected)
@@ -63,7 +64,7 @@ class TwigTextEnhancerExtensionSpec extends ObjectBehavior
                 }
 
                 for ($i = 0; $i < count($filters); $i++) {
-                    if (!$filters[$i] instanceof \Twig_SimpleFilter) {
+                    if (!$filters[$i] instanceof TwigFilter) {
                         return false;
                     }
 

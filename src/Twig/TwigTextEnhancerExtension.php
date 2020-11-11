@@ -2,9 +2,11 @@
 
 namespace Inviqa\EzTextEnhancerBundle\Twig;
 
-use eZ\Publish\Core\FieldType\RichText\Converter;
+use EzSystems\EzPlatformRichText\eZ\RichText\Converter;
 use Inviqa\EzTextEnhancerBundle\TextEnhancer;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 /**
  * Unfortunately, Twig extensions (like that one) are attached to the twig service. The drawback of this situation
@@ -16,7 +18,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * expect many dependencies, we prefer to keep the "dirty" solution in a single place. THIS IS WHY THIS SERVICE REQUIRES
  * THE CONTAINER.
  */
-final class TwigTextEnhancerExtension extends \Twig_Extension
+final class TwigTextEnhancerExtension extends AbstractExtension
 {
     const TEXT_ENHANCER_SERVICE_ID = 'inviqa.text_enhancer.chain_text_enhancer';
 
@@ -64,7 +66,7 @@ final class TwigTextEnhancerExtension extends \Twig_Extension
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('enhance_text', [$this, 'enhanceText'], ['is_safe' => ['all']]),
+            new TwigFilter('enhance_text', [$this, 'enhanceText'], ['is_safe' => ['all']]),
         ];
     }
 

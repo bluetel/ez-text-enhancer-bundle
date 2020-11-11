@@ -6,12 +6,13 @@
 
     <services>
         <service id="inviqa.text_enhancer.chain_text_enhancer"
-                 class="Inviqa\EzTextEnhancerBundle\TextEnhancer\ChainTextEnhancer">
+                 class="Inviqa\EzTextEnhancerBundle\TextEnhancer\ChainTextEnhancer"
+                 public="true">
         </service>
 
         <service id="inviqa.text_enhancer.twig_extension"
                  class="Inviqa\EzTextEnhancerBundle\Twig\TwigTextEnhancerExtension">
-            <argument type="service" id="ezpublish.fieldtype.ezrichtext.converter.output.xhtml5" />
+            <argument type="service" id="ezrichtext.converter.output.xhtml5.core" />
             <argument type="service" id="service_container" />
             <tag name="twig.extension" />
         </service>

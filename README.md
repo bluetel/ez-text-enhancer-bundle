@@ -1,5 +1,7 @@
 # eZ text enhancer bundle
 
+Note originally created by [Inviqa](https://github.com/inviqa) under https://github.com/inviqa/ez-text-enhancer-bundle This is a fork of the repo with updates to support ez platform 3. 
+
 Installation
 ============
 

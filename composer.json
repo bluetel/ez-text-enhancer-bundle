@@ -17,7 +17,7 @@
         "symfony/framework-bundle": "^5.0",
         "symfony/twig-bundle": "^5.0",
         "ezsystems/ezplatform-kernel": "~1.2.1",
-        "ezsystems/ezplatform-richtext": "~2.1.1"
+        "ezsystems/ezplatform-richtext": "~2.2.0"
     },
     "require-dev": {
         "phpspec/phpspec": "^6.3.0"
